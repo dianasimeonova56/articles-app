@@ -5,12 +5,14 @@ import { Article } from './article.model';
   selector: 'app-article',
   imports: [],
   templateUrl: './article.html',
-  styleUrl: './article.css'
+  styleUrl: './article.css',
+  standalone: true,
 })
 export class ArticleComponent {
   private symbols: number = 250;
   @Input() article!: Article;
-  // @Input() articleDesc: string;
+  @Input() articleDesc: string = "";
+  
   descToShow: string;
   articleDescLen: number;
   showReadMoreBtn: boolean = true;
